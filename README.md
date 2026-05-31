@@ -59,6 +59,13 @@
 |----------|-------------|
 | [Set](./docs/functions/Set.md) | Create or update a global variable |
 | [UpdateContext](./docs/functions/UpdateContext.md) | Create or update screen-local context variables |
+
+---
+
+### 📦 Defaults and User
+
+| Function | Description |
+|----------|-------------|
 | [Defaults](./docs/functions/Defaults.md) | Get default column values for a data source |
 | [User](./docs/functions/User.md) | Properties of the currently logged-in user |
 
