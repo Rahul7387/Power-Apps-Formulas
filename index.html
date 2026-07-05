@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Power Apps Formulas — Complete Reference</title>
+<style>
+  :root{ --purple:#742774; --border:#E1DFDD; --text:#201F1E; --text-secondary:#605E5C; }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,Arial,sans-serif;background:#F3F2F1;color:var(--text);}
+  .hero{background:linear-gradient(120deg,#742774 0%,#0066FF 100%);color:#fff;padding:44px 24px 52px;text-align:center;}
+  .hero .eyebrow{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#e6d9f5;font-weight:700;}
+  .hero h1{font-size:27px;margin:10px 0;}
+  .hero p{font-size:13.5px;color:#eee2f7;max-width:640px;margin:0 auto;line-height:1.6;}
+  .back-link{display:inline-block;margin-top:16px;color:#fff;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);padding:6px 16px;border-radius:20px;font-size:12px;text-decoration:none;}
+
+  .container{max-width:1050px;margin:-26px auto 0;padding:0 24px 60px;}
+  .search-bar{background:#fff;border:1px solid var(--border);border-radius:10px;padding:12px 16px;box-shadow:0 6px 18px rgba(0,0,0,.08);margin-bottom:22px;}
+  .search-bar input{width:100%;border:none;outline:none;font-size:14px;padding:6px 4px;}
+
+  .cat{margin-bottom:26px;}
+  .cat h2{font-size:14px;margin:0 0 10px;display:flex;align-items:center;gap:8px;}
+  .fn-grid{display:grid;grid-template-columns:repeat(auto-fill, minmax(230px, 1fr));gap:10px;}
+  .fn-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:10px 14px;text-decoration:none;color:var(--text);box-shadow:0 2px 6px rgba(0,0,0,.04);transition:transform .1s;}
+  .fn-card:hover{transform:translateY(-2px);box-shadow:0 6px 14px rgba(0,0,0,.08);}
+  .fn-card .name{font-size:12.5px;font-weight:700;color:var(--purple);}
+  .fn-card .d{font-size:10.5px;color:var(--text-secondary);margin-top:3px;line-height:1.4;}
+  .fn-card.hidden{display:none;}
+
+  .footer{text-align:center;margin-top:30px;font-size:12px;color:var(--text-secondary);}
+  .footer a{color:var(--purple);}
+</style>
+</head>
+<body>
+
+  <div class="hero">
+    <div class="eyebrow">Power Fx · Function Reference</div>
+    <h1>Power Apps Formulas — Complete Reference</h1>
+    <p>A comprehensive, example-driven reference for 48 Power Fx functions — simple examples, real-world patterns, best practices, and common mistakes for every function.</p>
+    <a class="back-link" href="https://rahul7387.github.io/power-platform-portfolio-hub/">← Back to Portfolio Hub</a>
+  </div>
+
+  <div class="container">
+    <div class="search-bar">
+      <input type="text" id="search" placeholder="🔍 Search functions (e.g. Patch, Filter, Navigate)...">
+    </div>
+
+    <div id="results">
+
+      <div class="cat" data-cat="Forms"><h2>📨 Forms</h2><div class="fn-grid">
+        <a class="fn-card" href="./docs/functions/SubmitForm.md"><div class="name">SubmitForm</div><div class="d">Submit a Form control to the data source</div></a>
+        <a class="fn-card" href="./docs/functions/NewForm.md"><div class="name">NewForm</div><div class="d">Set a form to New (create) mode</div></a>
+        <a class="fn-card" href="./docs/functions/EditForm.md"><div class="name">EditForm</div><div class="d">Set a form to Edit mode</div></a>
+        <a class="fn-card" href="./docs/functions/ViewForm.md"><div class="name">ViewForm</div><div class="d">Set a form to View (read-only) mode</div></a>
+        <a class="fn-card" href="./docs/functions/ResetForm.md"><div class="name">ResetForm</div><div class="d">Reset form fields, discarding unsaved edits</div></a>
+      </div></div>
+
+      <div class="cat" data-cat="Navigation"><h2>🧭 Navigation</h2><div class="fn-grid">
+        <a class="fn-card" href="./docs/functions/Navigate.md"><div class="name">Navigate</div><div class="d">Change the displayed screen</div></a>
+        <a class="fn-card" href="./docs/functions/Back.md"><div class="name">Back</div><div class="d">Return to the previously displayed screen</div></a>
+        <a class="fn-card" href="./docs/functions/Launch.md"><div class="name">Launch</div><div class="d">Open a URL, email, phone link, or another app</div></a>
+      </div></div>
+
+      <div class="cat" data-cat="Data Write"><h2>💾 Data Write</h2><div class="fn-grid">
+        <a class="fn-card" href="./docs/functions/Patch.md"><div class="name">Patch</div><div class="d">Create or update records in a data source</div></a>
+        <a class="fn-card" href="./docs/functions/Remove.md"><div class="name">Remove</div><div class="d">Delete records from a data source or collection</div></a>
+        <a class="fn-card" href="./docs/functions/Refresh.md"><div class="name">Refresh</div><div class="d">Reload data from the data source</div></a>
+      </div></div>
+
+      <div class="cat" data-cat="Data Read"><h2>🔍 Data Read</h2><div class="fn-grid">
+        <a class="fn-card" href="./docs/functions/Filter.md"><div class="name">Filter</div><div class="d">Return rows matching one or more conditions</div></a>
+        <a class="fn-card" href="./docs/functions/LookUp.md"><div class="name">LookUp</div><div class="d">Find and return a single matching record</div></a>
+        <a class="fn-card" href="./docs/functions/Search.md"><div class="name">Search</div><div class="d">Return rows where text columns contain a string</div></a>
+        <a class="fn-card" href="./docs/functions/Sort.md"><div class="name">Sort / SortByColumns</div><div class="d">Sort a table by one or more columns</div></a>
+        <a class="fn-card" href="./docs/functions/Distinct.md"><div class="name">Distinct</div><div class="d">Return a one-column table of unique values</div></a>
+        <a class="fn-card" href="./docs/functions/First.md"><div class="name">First / Last</div><div class="d">Return the first or last record from a table</div></a>
+        <a class="fn-card" href="./docs/functions/GallerySelected.md"><div class="name">Gallery.Selected</div><div class="d">The currently selected record in a Gallery</div></a>
+      </div></div>
+
+      <div class="cat" data-cat="Variables"><h2>📦 Variables</h2><div class="fn-grid">
+        <a class="fn-card" href="./docs/functions/Set.md"><div class="name">Set</div><div class="d">Create or update a global variable</div></a>
+        <a class="fn-card" href="./docs/functions/UpdateContext.md"><div class="name">UpdateContext</div><div class="d">Create or update screen-local context variables</div></a>
+      </div></div>
+
+      <div class="cat" data-cat="Defaults and User"><h2>👤 Defaults and User</h2><div class="fn-grid">
+        <a class="fn-card" href="./docs/functions/Defaults.md"><div class="name">Defaults</div><div class="d">Get default column values for a data source</div></a>
+        <a class="fn-card" href="./docs/functions/User.md"><div class="name">User</div><div class="d">Properties of the currently logged-in user</div></a>
+      </div></div>
+
+      <div class="cat" data-cat="Collections"><h2>🗃️ Collections</h2><div class="fn-grid">
+        <a class="fn-card" href="./docs/functions/Collect.md"><div class="name">Collect</div><div class="d">Append records to an in-memory collection</div></a>
+        <a class="fn-card" href="./docs/functions/ClearCollect.md"><div class="name">ClearCollect</div><div class="d">Clear and repopulate a collection</div></a>
+      </div></div>
+
+      <div class="cat" data-cat="Logic"><h2>🔀 Logic</h2><div class="fn-grid">
+        <a class="fn-card" href="./docs/functions/If.md"><div class="name">If</div><div class="d">Conditional branching — single or multi-branch</div></a>
+        <a class="fn-card" href="./docs/functions/Switch.md"><div class="name">Switch</div><div class="d">Multi-value exact-match branching</div></a>
+        <a class="fn-card" href="./docs/functions/IsBlank.md"><div class="name">IsBlank</div><div class="d">Check if a value is blank, null, or empty</div></a>
+        <a class="fn-card" href="./docs/functions/IsEmpty.md"><div class="name">IsEmpty</div><div class="d">Check if a table or collection has zero rows</div></a>
+        <a class="fn-card" href="./docs/functions/Coalesce.md"><div class="name">Coalesce</div><div class="d">Return the first non-blank value from a list</div></a>
+        <a class="fn-card" href="./docs/functions/With.md"><div class="name">With</div><div class="d">Evaluate a formula in a named record scope</div></a>
+      </div></div>
+
+      <div class="cat" data-cat="Data Transform"><h2>🔄 Data Transform</h2><div class="fn-grid">
+        <a class="fn-card" href="./docs/functions/AddColumns.md"><div class="name">AddColumns</div><div class="d">Add calculated columns to a table</div></a>
+        <a class="fn-card" href="./docs/functions/GroupBy.md"><div class="name">GroupBy</div><div class="d">Group rows by one or more columns</div></a>
+        <a class="fn-card" href="./docs/functions/ForAll.md"><div class="name">ForAll</div><div class="d">Iterate over rows and run a formula on each</div></a>
+        <a class="fn-card" href="./docs/functions/ShowColumns.md"><div class="name">ShowColumns / DropColumns</div><div class="d">Select or remove specific columns</div></a>
+      </div></div>
+
+      <div class="cat" data-cat="Text"><h2>📝 Text</h2><div class="fn-grid">
+        <a class="fn-card" href="./docs/functions/Concatenate.md"><div class="name">Concatenate / &</div><div class="d">Join text strings together</div></a>
+        <a class="fn-card" href="./docs/functions/Text.md"><div class="name">Text</div><div class="d">Format a value as a string</div></a>
+        <a class="fn-card" href="./docs/functions/Split.md"><div class="name">Split</div><div class="d">Split a string into a table of substrings</div></a>
+        <a class="fn-card" href="./docs/functions/StringFunctions.md"><div class="name">String Functions</div><div class="d">Trim, Upper, Lower, Proper, Len, Left, Right, Mid, Find, Substitute</div></a>
+        <a class="fn-card" href="./docs/functions/Value.md"><div class="name">Value</div><div class="d">Convert a text string to a number</div></a>
+        <a class="fn-card" href="./docs/functions/IsMatch.md"><div class="name">IsMatch</div><div class="d">Validate a string against a pattern or regex</div></a>
+        <a class="fn-card" href="./docs/functions/EncodeUrl.md"><div class="name">EncodeUrl / JSON</div><div class="d">Encode strings for URLs; convert records to JSON</div></a>
+      </div></div>
+
+      <div class="cat" data-cat="Date and Time"><h2>📅 Date &amp; Time</h2><div class="fn-grid">
+        <a class="fn-card" href="./docs/functions/DateFunctions.md"><div class="name">Date &amp; Time Functions</div><div class="d">Today, Now, DateAdd, DateDiff, DateValue, Year, Month, Day, Weekday</div></a>
+      </div></div>
+
+      <div class="cat" data-cat="Aggregation"><h2>📊 Aggregation</h2><div class="fn-grid">
+        <a class="fn-card" href="./docs/functions/CountRows.md"><div class="name">CountRows / CountIf</div><div class="d">Count rows in a table or matching a condition</div></a>
+        <a class="fn-card" href="./docs/functions/Aggregation.md"><div class="name">Sum / Average / Min / Max</div><div class="d">Aggregate numeric column values</div></a>
+        <a class="fn-card" href="./docs/functions/Round.md"><div class="name">Round / RoundUp / RoundDown</div><div class="d">Round numbers to a specified precision</div></a>
+      </div></div>
+
+      <div class="cat" data-cat="Debugging"><h2>🛠️ Debugging &amp; Error Handling</h2><div class="fn-grid">
+        <a class="fn-card" href="./docs/functions/Trace.md"><div class="name">Trace</div><div class="d">Log messages to Power Apps Monitor</div></a>
+        <a class="fn-card" href="./docs/functions/IsError.md"><div class="name">IsError / IfError</div><div class="d">Detect and handle errors from functions like Patch</div></a>
+      </div></div>
+
+    </div>
+
+    <div class="footer">
+      Each function page includes syntax, parameters, simple &amp; complex examples, best practices, and related functions.<br>
+      <a href="https://github.com/Rahul7387/Power-Apps-Formulas">View source on GitHub</a> ·
+      <a href="https://rahul7387.github.io/power-platform-portfolio-hub/">Back to Portfolio Hub</a>
+    </div>
+  </div>
+
+<script>
+document.getElementById('search').addEventListener('input', function(e){
+  var q = e.target.value.toLowerCase();
+  document.querySelectorAll('.fn-card').forEach(function(card){
+    var text = card.innerText.toLowerCase();
+    card.classList.toggle('hidden', q.length > 0 && !text.includes(q));
+  });
+  document.querySelectorAll('.cat').forEach(function(cat){
+    var visible = cat.querySelectorAll('.fn-card:not(.hidden)').length;
+    cat.style.display = visible === 0 ? 'none' : '';
+  });
+});
+</script>
+
+</body>
+</html>
